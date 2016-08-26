@@ -11,11 +11,9 @@ import com.meedan.ShareMenuPackage;
 
 import java.util.Map;
 import java.util.ArrayList;
-import java.lang.System;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 
 public class ShareMenuModule extends ReactContextBaseJavaModule {
   private Activity mActivity = null;
@@ -35,8 +33,6 @@ public class ShareMenuModule extends ReactContextBaseJavaModule {
   @ReactMethod
   public void getSharedText(Callback successCallback) {
     Intent intent = mActivity.getIntent();
-    String action = intent.getAction();
-    String type = intent.getType();
     String inputText = intent.getStringExtra(Intent.EXTRA_TEXT);
     Long currentIntent = intent.getLongExtra("id", -1);
 
